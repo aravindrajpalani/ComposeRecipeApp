@@ -40,7 +40,7 @@ fun MainScreen(navController: NavHostController, viewModel: HomeViewModel) {
         ) {
             composable(RecipeAppDestinations.HOME_ROUTE) {
                 HomeScreen(onRecipeClick = { recipeId ->
-
+                    navigationActions.navigateToRecipeDetail(recipeId)
                 }, viewModel)
             }
         }

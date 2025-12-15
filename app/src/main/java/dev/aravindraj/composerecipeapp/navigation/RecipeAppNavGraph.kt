@@ -2,15 +2,20 @@ package dev.aravindraj.composerecipeapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import dev.aravindraj.composerecipeapp.navigation.RecipeAppDestinationsArgs.RECIPE_ID_ARG
 import dev.aravindraj.composerecipeapp.ui.home.HomeViewModel
 import dev.aravindraj.composerecipeapp.ui.main.MainScreen
+import dev.aravindraj.composerecipeapp.ui.recipedetail.RecipeDetailsScreen
 
 @Composable
 fun RecipeAppNavGraph(
@@ -30,6 +35,25 @@ fun RecipeAppNavGraph(
         ) { backStackEntry ->
             val viewModel: HomeViewModel = hiltViewModel(backStackEntry)
             MainScreen(navController, viewModel)
+        }
+        composable(
+            route = RecipeAppDestinations.RECIPE_DETAILS_ROUTE,
+            arguments = listOf(
+                navArgument(RECIPE_ID_ARG) {
+                    type = NavType.IntType
+                }
+            )
+        ) { backStackEntry ->
+            val parentEntry = remember(backStackEntry) {
+                navController.getBackStackEntry(RecipeAppDestinations.MAIN_ROUTE)
+            }
+            val viewModel: HomeViewModel = hiltViewModel(parentEntry)
+            val recipeItemId = backStackEntry.arguments?.getInt(RECIPE_ID_ARG)!!
+            RecipeDetailsScreen(
+                recipeId = recipeItemId,
+                onNavigateBack = { navController.navigateUp() },
+                viewModel
+            )
         }
     }
 
