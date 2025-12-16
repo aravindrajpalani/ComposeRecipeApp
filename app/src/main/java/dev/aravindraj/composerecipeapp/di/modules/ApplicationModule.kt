@@ -1,12 +1,17 @@
 package dev.aravindraj.composerecipeapp.di.modules
 
 
+import android.content.Context
+import android.content.res.AssetManager
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.aravindraj.composerecipeapp.BuildConfig
 import dev.aravindraj.composerecipeapp.data.repository.RecipeRepository
+import dev.aravindraj.composerecipeapp.data.source.local.LocalDataSource
 import dev.aravindraj.composerecipeapp.data.source.remote.RecipeAPIService
 import dev.aravindraj.composerecipeapp.data.source.remote.RemoteDataSource
 import dev.aravindraj.composerecipeapp.di.ApiKey
@@ -38,6 +43,16 @@ object ApplicationModule {
 
     @Provides
     @Singleton
+    fun provideAssetManager(
+        @ApplicationContext context: Context
+    ): AssetManager = context.assets
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson = Gson()
+
+    @Provides
+    @Singleton
     fun provideApiKeyInterceptor(@ApiKey apiKey: String): Interceptor {
         return Interceptor { chain ->
             val request = chain.request().newBuilder().addHeader("x-api-key", apiKey).build()
@@ -62,17 +77,12 @@ object ApplicationModule {
     fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor, apiKeyInterceptor: Interceptor
     ): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(apiKeyInterceptor)
-            .apply {
-                if (BuildConfig.DEBUG) {
-                    addInterceptor(loggingInterceptor)
-                }
+        return OkHttpClient.Builder().addInterceptor(apiKeyInterceptor).apply {
+            if (BuildConfig.DEBUG) {
+                addInterceptor(loggingInterceptor)
             }
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .build()
+        }.connectTimeout(30, TimeUnit.SECONDS).readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS).build()
     }
 
     @Provides
@@ -98,8 +108,16 @@ object ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideRecipeRepository(remoteDataSource: RemoteDataSource): RecipeRepository {
-        return RecipeRepository(remoteDataSource)
+    fun provideLocalDataSource(assetManager: AssetManager, gson: Gson): LocalDataSource {
+        return LocalDataSource(assetManager, gson)
+    }
+
+    @Provides
+    @Singleton
+    fun provideRecipeRepository(
+        remoteDataSource: RemoteDataSource, localDataSource: LocalDataSource
+    ): RecipeRepository {
+        return RecipeRepository(remoteDataSource, localDataSource)
     }
 
 

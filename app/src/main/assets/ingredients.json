@@ -1,0 +1,469 @@
+[
+  {
+    "category": "Dairy & Dairy Alternatives",
+    "items": [
+      {
+        "name": "Shredded Cheddar Cheese",
+        "id": 1001009
+      },
+      {
+        "name": "Shredded Mozzarella",
+        "id": 1001026
+      },
+      {
+        "name": "Plain Yogurt",
+        "id": 1001116
+      },
+      {
+        "name": "Low Fat Greek Yogurt",
+        "id": 93652
+      },
+      {
+        "name": "Cottage Cheese",
+        "id": 1012
+      },
+      {
+        "name": "Sweetened Condensed Milk",
+        "id": 1095
+      },
+      {
+        "name": "American Cheese",
+        "id": 1253
+      },
+      {
+        "name": "Block Style Cream Cheese",
+        "id": 1186
+      },
+      {
+        "name": "Fresh Mozzarella",
+        "id": 1021026
+      },
+      {
+        "name": "Parmigiano Reggiano",
+        "id": 1033
+      }
+    ]
+  },
+  {
+    "category": "Meat & Poultry",
+    "items": [
+      {
+        "name": "Boneless Chicken Breast",
+        "id": 5062
+      },
+      {
+        "name": "Boneless Skinless Chicken Thighs",
+        "id": 5096
+      },
+      {
+        "name": "85 Percent Lean Ground Beef",
+        "id": 23567
+      },
+      {
+        "name": "Rotisserie Chicken",
+        "id": 99246
+      },
+      {
+        "name": "Smoked Sausage",
+        "id": 7916
+      },
+      {
+        "name": "90 Percent Lean Ground Beef",
+        "id": 23562
+      },
+      {
+        "name": "95 Percent Lean Ground Beef",
+        "id": 23557
+      },
+      {
+        "name": "93 Percent Lean Ground Turkey",
+        "id": 5665
+      },
+      {
+        "name": "Boneless Pork Loin",
+        "id": 10225
+      },
+      {
+        "name": "Boneless Chicken Breast Halves",
+        "id": 1045062
+      }
+    ]
+  },
+  {
+    "category": "Produce, Beans & Legumes",
+    "items": [
+      {
+        "name": "Lemon",
+        "id": 9150
+      },
+      {
+        "name": "Canned Whole Tomatoes",
+        "id": 10011531
+      },
+      {
+        "name": "Cherry Tomato",
+        "id": 10311529
+      },
+      {
+        "name": "Apple Cider Vinegar",
+        "id": 2048
+      },
+      {
+        "name": "Flat Leaf Parsley",
+        "id": 10311297
+      },
+      {
+        "name": "Artichoke Hearts",
+        "id": 99242
+      },
+      {
+        "name": "Roasted Red Peppers",
+        "id": 11916
+      },
+      {
+        "name": "Diced Tomatoes with Green Chilies",
+        "id": 10011885
+      },
+      {
+        "name": "Canned Green Chiles",
+        "id": 11980
+      },
+      {
+        "name": "Pickled Jalapenos",
+        "id": 11632
+      }
+    ]
+  },
+  {
+    "category": "Grains, Pasta & Baking Mixes",
+    "items": [
+      {
+        "name": "Cooked Angel Hair Pasta",
+        "id": 10020421
+      },
+      {
+        "name": "Cooked Whole Wheat Spaghetti",
+        "id": 10120125
+      },
+      {
+        "name": "Cooked Quinoa",
+        "id": 20137
+      },
+      {
+        "name": "Cooked Long Grain Brown Rice",
+        "id": 20037
+      },
+      {
+        "name": "Unbleached All Purpose Flour",
+        "id": 20581
+      },
+      {
+        "name": "Pizza Dough",
+        "id": 93610
+      },
+      {
+        "name": "Cooked Macaroni",
+        "id": 20400
+      },
+      {
+        "name": "Cooked Quick Cooking Oats",
+        "id": 8123
+      },
+      {
+        "name": "Cooked Rolled Oats",
+        "id": 8121
+      },
+      {
+        "name": "Cooked Instant Brown Rice",
+        "id": 10020049
+      }
+    ]
+  },
+  {
+    "category": "Fats, Oils & Condiments",
+    "items": [
+      {
+        "name": "Sweet Butter",
+        "id": 1011001
+      },
+      {
+        "name": "Teriyaki Sauce",
+        "id": 6112
+      },
+      {
+        "name": "Vinaigrette",
+        "id": 4135
+      },
+      {
+        "name": "Yellow Mustard",
+        "id": 1042046
+      },
+      {
+        "name": "Distilled White Vinegar",
+        "id": 2053
+      },
+      {
+        "name": "Whole Grain Dijon Mustard",
+        "id": 1012046
+      },
+      {
+        "name": "Balsamic Vinaigrette",
+        "id": 99249
+      },
+      {
+        "name": "Aged Balsamic Vinegar",
+        "id": 1002069
+      },
+      {
+        "name": "Seasoned Rice Vinegar",
+        "id": 1032053
+      },
+      {
+        "name": "Unseasoned Rice Vinegar",
+        "id": 1022053
+      }
+    ]
+  },
+  {
+    "category": "Sweets, Candy & Desserts",
+    "items": [
+      {
+        "name": "Semisweet Chocolate Chips",
+        "id": 10019903
+      },
+      {
+        "name": "Unsweetened Cocoa Powder",
+        "id": 19165
+      },
+      {
+        "name": "Vanilla Sandwich Cookies",
+        "id": 18210
+      },
+      {
+        "name": "Chocolate Sandwich Cookies",
+        "id": 18166
+      },
+      {
+        "name": "Sweetened Coconut",
+        "id": 12109
+      },
+      {
+        "name": "Instant Vanilla Pudding Mix",
+        "id": 19206
+      },
+      {
+        "name": "Instant Chocolate Pudding Mix",
+        "id": 19184
+      },
+      {
+        "name": "Instant Cheesecake Pudding Mix",
+        "id": 99192
+      },
+      {
+        "name": "Sugar Free Vanilla Pudding Mix",
+        "id": 99022
+      },
+      {
+        "name": "Sugar Free Chocolate Pudding Mix",
+        "id": 99023
+      }
+    ]
+  },
+  {
+    "category": "Canned Goods & Broths",
+    "items": [
+      {
+        "name": "Low Sodium Chicken Broth",
+        "id": 6970
+      },
+      {
+        "name": "Condensed Cream of Mushroom Soup",
+        "id": 6147
+      },
+      {
+        "name": "Low Sodium Beef Broth",
+        "id": 10093741
+      },
+      {
+        "name": "Low Sodium Vegetable Broth",
+        "id": 99253
+      },
+      {
+        "name": "Condensed Cream of Chicken Soup",
+        "id": 6016
+      },
+      {
+        "name": "Condensed Cream of Celery Soup",
+        "id": 6010
+      },
+      {
+        "name": "Reduced Fat And Reduced Sodium Cream of Mushroom Soup",
+        "id": 6988
+      },
+      {
+        "name": "Reduced Fat Cream of Mushroom Soup",
+        "id": 1006988
+      },
+      {
+        "name": "Reduced Sodium Cream of Mushroom Soup",
+        "id": 6182
+      },
+      {
+        "name": "Reduced Fat Cream of Chicken Soup",
+        "id": 6219
+      }
+    ]
+  },
+  {
+    "category": "Nuts, Seeds & Dried Fruit",
+    "items": [
+      {
+        "name": "Blanched Slivered Almonds",
+        "id": 10012062
+      },
+      {
+        "name": "Roasted Salted Sunflower Seeds",
+        "id": 12538
+      },
+      {
+        "name": "Dried Sweetened Cranberries",
+        "id": 9079
+      },
+      {
+        "name": "Sunflower Kernels",
+        "id": 12036
+      },
+      {
+        "name": "Roasted Pumpkin Seeds",
+        "id": 12516
+      },
+      {
+        "name": "Roasted Unsalted Pumpkin Seeds",
+        "id": 12016
+      }
+    ]
+  },
+  {
+    "category": "Beverages & Concentrates",
+    "items": [
+      {
+        "name": "Light Coconut Milk",
+        "id": 99009
+      },
+      {
+        "name": "Cranberry Juice Cocktail",
+        "id": 14242
+      },
+      {
+        "name": "Orange Juice Concentrate",
+        "id": 9214
+      },
+      {
+        "name": "Unsweetened Coconut Milk",
+        "id": 12117
+      },
+      {
+        "name": "Cranberry Juice Concentrate",
+        "id": 14430
+      },
+      {
+        "name": "Lemonade Concentrate",
+        "id": 14292
+      },
+      {
+        "name": "Limeade Concentrate",
+        "id": 14303
+      }
+    ]
+  },
+  {
+    "category": "Breads, Wraps & Crackers",
+    "items": [
+      {
+        "name": "Hamburger Bun",
+        "id": 18350
+      },
+      {
+        "name": "Whole Wheat Tortilla",
+        "id": 93675
+      },
+      {
+        "name": "Butter Crackers",
+        "id": 18621
+      },
+      {
+        "name": "Whole Wheat Crackers",
+        "id": 18235
+      },
+      {
+        "name": "Finely Crushed Pretzels",
+        "id": 19047
+      },
+      {
+        "name": "Whole Wheat Pita",
+        "id": 18042
+      },
+      {
+        "name": "Whole Wheat English Muffins",
+        "id": 18266
+      },
+      {
+        "name": "Gluten Free White Sandwich Bread",
+        "id": 18069
+      },
+      {
+        "name": "Gluten Free Hamburger Bun",
+        "id": 99059
+      },
+      {
+        "name": "Low Carb Tortilla",
+        "id": 99086
+      }
+    ]
+  },
+  {
+    "category": "Spices & Seasonings",
+    "items": [
+      {
+        "name": "Red Pepper Flakes",
+        "id": 1032009
+      },
+      {
+        "name": "Italian Seasoning",
+        "id": 1022027
+      },
+      {
+        "name": "Kosher Dill Sandwich Slices",
+        "id": 10211937
+      },
+      {
+        "name": "Hungarian Sweet Paprika",
+        "id": 1002028
+      },
+      {
+        "name": "Poultry Seasoning",
+        "id": 2034
+      },
+      {
+        "name": "Montreal Steak Seasoning",
+        "id": 1022034
+      },
+      {
+        "name": "Sazon Completa",
+        "id": 98999
+      },
+      {
+        "name": "Everything Bagel Seasoning",
+        "id": 99241
+      },
+      {
+        "name": "Real Bacon Pieces",
+        "id": 99229
+      },
+      {
+        "name": "Chinese Five Spice",
+        "id": 1002002
+      }
+    ]
+  }
+]
