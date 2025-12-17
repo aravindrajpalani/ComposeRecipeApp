@@ -9,6 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -22,19 +24,19 @@ import dev.aravindraj.composerecipeapp.navigation.RecipeAppNavigationActions
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens
 import dev.aravindraj.composerecipeapp.ui.home.HomeScreen
 import dev.aravindraj.composerecipeapp.ui.home.HomeViewModel
+import dev.aravindraj.composerecipeapp.ui.ingredients.IngredientsScreen
 
 @Composable
-fun MainScreen(navController: NavHostController, viewModel: HomeViewModel) {
-    val navigationActions = RecipeAppNavigationActions(navController)
-    val bottomNavItems = listOf(
-        BottomNavItem.HomeItem
-    )
+fun MainScreen(navControllerMain: NavHostController, viewModel: HomeViewModel) {
+    val navigationActions = RecipeAppNavigationActions(navControllerMain)
+    val bottomNavItems = listOf(BottomNavItem.HomeItem, BottomNavItem.IngredientsItem)
+    val navController = rememberNavController()
     Scaffold(
         bottomBar = {
             BottomNavigationBar(navController = navController, items = bottomNavItems)
         }) { paddingValues ->
         NavHost(
-            navController = rememberNavController(),
+            navController = navController,
             startDestination = RecipeAppScreens.HOME_SCREEN,
             modifier = Modifier.padding(paddingValues)
         ) {
@@ -42,6 +44,9 @@ fun MainScreen(navController: NavHostController, viewModel: HomeViewModel) {
                 HomeScreen(onRecipeClick = { recipeId ->
                     navigationActions.navigateToRecipeDetail(recipeId)
                 }, viewModel)
+            }
+            composable(RecipeAppDestinations.INGREDIENTS_ROUTE) {
+                IngredientsScreen(viewModel = hiltViewModel())
             }
         }
     }
@@ -57,7 +62,11 @@ fun BottomNavigationBar(
 
         items.forEach { screen ->
             NavigationBarItem(
-                icon = { Icon(screen.icon, contentDescription = screen.label) },
+                icon = {
+                    Icon(
+                        painter = painterResource(screen.icon), contentDescription = screen.label
+                    )
+                },
                 label = { Text(screen.label) },
                 selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
                 onClick = {

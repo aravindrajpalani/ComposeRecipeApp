@@ -5,4 +5,7 @@
     <string name="cooking_time">COOKING TIME</string>
     <string name="servings">SERVINGS</string>
     <string name="health_score">HEALTH SCORE</string>
+    <string name="find_recipes">Find Recipes</string>
+    <string name="clear_all">Clear All</string>
+    <string name="content_desc_toggle">Toggle</string>
 </resources>
