@@ -2,6 +2,7 @@ package dev.aravindraj.composerecipeapp.data.repository
 
 import dev.aravindraj.composerecipeapp.data.model.IngredientCategory
 import dev.aravindraj.composerecipeapp.data.model.Recipe
+import dev.aravindraj.composerecipeapp.data.model.RecipeByIngredients
 import dev.aravindraj.composerecipeapp.data.source.local.LocalDataSource
 import dev.aravindraj.composerecipeapp.data.source.remote.RemoteDataSource
 import kotlinx.coroutines.Dispatchers
@@ -26,4 +27,9 @@ class RecipeRepository @Inject constructor(
             emit(localDataSource.getAllIngredients())
         }.flowOn(Dispatchers.IO)
     }
+
+    fun getRecipesByIngredients(ingredients: String, number: Int): Flow<List<RecipeByIngredients>> {
+        return flow { emit(remoteDataSource.getRecipesByIngredients(ingredients, number)) }
+    }
+
 }

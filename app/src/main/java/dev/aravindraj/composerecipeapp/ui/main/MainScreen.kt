@@ -25,12 +25,18 @@ import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens
 import dev.aravindraj.composerecipeapp.ui.home.HomeScreen
 import dev.aravindraj.composerecipeapp.ui.home.HomeViewModel
 import dev.aravindraj.composerecipeapp.ui.ingredients.IngredientsScreen
+import dev.aravindraj.composerecipeapp.ui.recipebyingredients.RecipeByIngredientsViewModel
 
 @Composable
-fun MainScreen(navControllerMain: NavHostController, viewModel: HomeViewModel) {
+fun MainScreen(
+    navControllerMain: NavHostController,
+    homeViewModel: HomeViewModel,
+    recipeByIngredientsViewModel: RecipeByIngredientsViewModel
+) {
     val navigationActions = RecipeAppNavigationActions(navControllerMain)
     val bottomNavItems = listOf(BottomNavItem.HomeItem, BottomNavItem.IngredientsItem)
     val navController = rememberNavController()
+
     Scaffold(
         bottomBar = {
             BottomNavigationBar(navController = navController, items = bottomNavItems)
@@ -43,10 +49,16 @@ fun MainScreen(navControllerMain: NavHostController, viewModel: HomeViewModel) {
             composable(RecipeAppDestinations.HOME_ROUTE) {
                 HomeScreen(onRecipeClick = { recipeId ->
                     navigationActions.navigateToRecipeDetail(recipeId)
-                }, viewModel)
+                }, homeViewModel)
             }
             composable(RecipeAppDestinations.INGREDIENTS_ROUTE) {
-                IngredientsScreen(viewModel = hiltViewModel())
+                IngredientsScreen(
+                    viewModel = hiltViewModel(),
+                    onNavigateToRecipes = { selectedIngredients ->
+                        recipeByIngredientsViewModel.setSelectedIngredients(selectedIngredients)
+                        navigationActions.navigateToRecipeByIngredients()
+                        recipeByIngredientsViewModel.findRecipesByIngredients()
+                    })
             }
         }
     }

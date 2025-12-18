@@ -53,7 +53,9 @@ import dev.aravindraj.composerecipeapp.ui.theme.secondaryContainerLight
 
 
 @Composable
-fun IngredientsScreen(viewModel: IngredientsViewModel) {
+fun IngredientsScreen(
+    viewModel: IngredientsViewModel, onNavigateToRecipes: (List<String>) -> Unit
+) {
     val uiState by viewModel.uiState.collectAsState()
 
     when (val state = uiState) {
@@ -62,7 +64,9 @@ fun IngredientsScreen(viewModel: IngredientsViewModel) {
         }
 
         is UiState.Success -> {
-            ExpandableIngredientList(ingredientCategories = state.data, onClick = {})
+            ExpandableIngredientList(
+                ingredientCategories = state.data,
+                onClick = { selectedIngredients -> onNavigateToRecipes(selectedIngredients) })
         }
 
         is UiState.Error -> {
@@ -73,7 +77,9 @@ fun IngredientsScreen(viewModel: IngredientsViewModel) {
 }
 
 @Composable
-fun ExpandableIngredientList(ingredientCategories: List<IngredientCategory>, onClick: () -> Unit) {
+fun ExpandableIngredientList(
+    ingredientCategories: List<IngredientCategory>, onClick: (List<String>) -> Unit
+) {
 
     val expandedStates = remember {
         mutableStateMapOf<String, Boolean>()
@@ -104,8 +110,8 @@ fun ExpandableIngredientList(ingredientCategories: List<IngredientCategory>, onC
             }
         }
         FindRecipesButton(
-            selectedCount = selectedIngredients.size, onClick = onClick
-        )
+            selectedCount = selectedIngredients.size,
+            onClick = { onClick(selectedIngredients.toList()) })
     }
 }
 
