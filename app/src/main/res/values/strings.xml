@@ -8,4 +8,6 @@
     <string name="find_recipes">Find Recipes</string>
     <string name="clear_all">Clear All</string>
     <string name="content_desc_toggle">Toggle</string>
+    <string name="meal_plans">Meal Plans</string>
+    <string name="choose_a_plan">Choose a plan that matches your goals</string>
 </resources>

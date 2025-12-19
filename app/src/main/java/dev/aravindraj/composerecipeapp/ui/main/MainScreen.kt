@@ -25,6 +25,7 @@ import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens
 import dev.aravindraj.composerecipeapp.ui.home.HomeScreen
 import dev.aravindraj.composerecipeapp.ui.home.HomeViewModel
 import dev.aravindraj.composerecipeapp.ui.ingredients.IngredientsScreen
+import dev.aravindraj.composerecipeapp.ui.mealplan.MealPlanScreen
 import dev.aravindraj.composerecipeapp.ui.recipebyingredients.RecipeByIngredientsViewModel
 
 @Composable
@@ -34,7 +35,9 @@ fun MainScreen(
     recipeByIngredientsViewModel: RecipeByIngredientsViewModel
 ) {
     val navigationActions = RecipeAppNavigationActions(navControllerMain)
-    val bottomNavItems = listOf(BottomNavItem.HomeItem, BottomNavItem.IngredientsItem)
+    val bottomNavItems = listOf(
+        BottomNavItem.HomeItem, BottomNavItem.IngredientsItem, BottomNavItem.MealPlanItem
+    )
     val navController = rememberNavController()
 
     Scaffold(
@@ -53,12 +56,16 @@ fun MainScreen(
             }
             composable(RecipeAppDestinations.INGREDIENTS_ROUTE) {
                 IngredientsScreen(
-                    viewModel = hiltViewModel(),
-                    onNavigateToRecipes = { selectedIngredients ->
+                    viewModel = hiltViewModel(), onNavigateToRecipes = { selectedIngredients ->
                         recipeByIngredientsViewModel.setSelectedIngredients(selectedIngredients)
                         navigationActions.navigateToRecipeByIngredients()
                         recipeByIngredientsViewModel.findRecipesByIngredients()
                     })
+            }
+            composable(RecipeAppDestinations.MEAL_PLAN_ROUTE) {
+                MealPlanScreen(
+                    onMealPlanClick = {}, mealPlanViewModel = hiltViewModel()
+                )
             }
         }
     }

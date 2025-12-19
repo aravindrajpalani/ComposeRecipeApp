@@ -1,6 +1,7 @@
 package dev.aravindraj.composerecipeapp.data.repository
 
 import dev.aravindraj.composerecipeapp.data.model.IngredientCategory
+import dev.aravindraj.composerecipeapp.data.model.MealTemplate
 import dev.aravindraj.composerecipeapp.data.model.Recipe
 import dev.aravindraj.composerecipeapp.data.model.RecipeByIngredients
 import dev.aravindraj.composerecipeapp.data.source.local.LocalDataSource
@@ -32,4 +33,7 @@ class RecipeRepository @Inject constructor(
         return flow { emit(remoteDataSource.getRecipesByIngredients(ingredients, number)) }
     }
 
+    fun getMealTemplates(): Flow<List<MealTemplate>> {
+        return flow { emit(remoteDataSource.getMealTemplates()) }.map { it.templates }
+    }
 }

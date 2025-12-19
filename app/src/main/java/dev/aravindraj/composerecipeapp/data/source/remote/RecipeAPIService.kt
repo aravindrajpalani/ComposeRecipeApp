@@ -1,5 +1,6 @@
 package dev.aravindraj.composerecipeapp.data.source.remote
 
+import dev.aravindraj.composerecipeapp.data.model.MealTemplatesResponse
 import dev.aravindraj.composerecipeapp.data.model.RandomRecipesResponse
 import dev.aravindraj.composerecipeapp.data.model.RecipeByIngredients
 import retrofit2.http.GET
@@ -15,8 +16,9 @@ interface RecipeAPIService {
 
     @GET("recipes/findByIngredients")
     suspend fun getRecipesByIngredients(
-        @Query("ingredients") ingredients: String,
-        @Query("number") number: Int
+        @Query("ingredients") ingredients: String, @Query("number") number: Int
     ): List<RecipeByIngredients>
 
+    @GET("mealplanner/public-templates")
+    suspend fun getMealTemplates(): MealTemplatesResponse
 }
