@@ -3,7 +3,7 @@ package dev.aravindraj.composerecipeapp.ui.mealplan
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.aravindraj.composerecipeapp.data.model.MealTemplate
+import dev.aravindraj.composerecipeapp.data.model.mealplan.MealTemplate
 import dev.aravindraj.composerecipeapp.data.repository.RecipeRepository
 import dev.aravindraj.composerecipeapp.ui.base.UiState
 import kotlinx.coroutines.flow.MutableStateFlow

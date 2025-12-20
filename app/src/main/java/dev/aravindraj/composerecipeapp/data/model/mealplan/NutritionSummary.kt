@@ -1,0 +1,11 @@
+package dev.aravindraj.composerecipeapp.data.model.mealplan
+
+import com.google.gson.annotations.SerializedName
+
+
+data class NutritionSummary(
+
+    @SerializedName("nutrients")
+    var nutrients: ArrayList<Nutrients> = arrayListOf()
+
+)

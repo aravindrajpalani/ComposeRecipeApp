@@ -37,7 +37,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import dev.aravindraj.composerecipeapp.R
-import dev.aravindraj.composerecipeapp.data.model.MealTemplate
+import dev.aravindraj.composerecipeapp.data.model.mealplan.MealTemplate
 import dev.aravindraj.composerecipeapp.ui.base.UiState
 import dev.aravindraj.composerecipeapp.ui.components.ErrorScreen
 import dev.aravindraj.composerecipeapp.ui.components.LoadingScreen

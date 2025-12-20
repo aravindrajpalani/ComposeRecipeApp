@@ -1,4 +1,4 @@
-package dev.aravindraj.composerecipeapp.data.model
+package dev.aravindraj.composerecipeapp.data.model.mealplan
 
 import com.google.gson.annotations.SerializedName
 

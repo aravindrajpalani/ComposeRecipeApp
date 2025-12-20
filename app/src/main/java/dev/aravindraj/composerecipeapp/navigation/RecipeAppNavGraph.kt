@@ -12,9 +12,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import dev.aravindraj.composerecipeapp.navigation.RecipeAppDestinationsArgs.MEAL_PLAN_ID_ARG
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppDestinationsArgs.RECIPE_ID_ARG
 import dev.aravindraj.composerecipeapp.ui.home.HomeViewModel
 import dev.aravindraj.composerecipeapp.ui.main.MainScreen
+import dev.aravindraj.composerecipeapp.ui.mealplandetails.MealPlanDetailsScreen
 import dev.aravindraj.composerecipeapp.ui.recipebyingredients.RecipeByIngredientsScreen
 import dev.aravindraj.composerecipeapp.ui.recipebyingredients.RecipeByIngredientsViewModel
 import dev.aravindraj.composerecipeapp.ui.recipedetail.RecipeDetailsScreen
@@ -59,6 +61,14 @@ fun RecipeAppNavGraph(
             RecipeByIngredientsScreen(recipeByIngredientsViewModel, onNavigateBack = {
                 navController.navigateUp()
             })
+        }
+        composable(
+            route = RecipeAppDestinations.MEAL_PLAN_DETAILS_ROUTE, arguments = listOf(
+                navArgument(MEAL_PLAN_ID_ARG) {
+                    type = NavType.IntType
+                })
+        ) {
+            MealPlanDetailsScreen(mealPlanDetailsViewModel = hiltViewModel(), onNavigateBack = {})
         }
     }
 

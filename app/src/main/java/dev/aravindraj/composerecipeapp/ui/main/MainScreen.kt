@@ -51,7 +51,7 @@ fun MainScreen(
         ) {
             composable(RecipeAppDestinations.HOME_ROUTE) {
                 HomeScreen(onRecipeClick = { recipeId ->
-                    navigationActions.navigateToRecipeDetail(recipeId)
+                    navigationActions.navigateToRecipeDetails(recipeId)
                 }, homeViewModel)
             }
             composable(RecipeAppDestinations.INGREDIENTS_ROUTE) {
@@ -64,7 +64,11 @@ fun MainScreen(
             }
             composable(RecipeAppDestinations.MEAL_PLAN_ROUTE) {
                 MealPlanScreen(
-                    onMealPlanClick = {}, mealPlanViewModel = hiltViewModel()
+                    onMealPlanClick = { mealPlanId ->
+                        navigationActions.navigateToMealPlanDetails(
+                            mealPlanId = mealPlanId
+                        )
+                    }, mealPlanViewModel = hiltViewModel()
                 )
             }
         }

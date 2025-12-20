@@ -3,10 +3,12 @@ package dev.aravindraj.composerecipeapp.navigation
 import androidx.navigation.NavHostController
 import dev.aravindraj.composerecipeapp.R
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppDestinations.RECIPE_BY_INGREDIENTS_ROUTE
+import dev.aravindraj.composerecipeapp.navigation.RecipeAppDestinationsArgs.MEAL_PLAN_ID_ARG
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppDestinationsArgs.RECIPE_ID_ARG
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.HOME_SCREEN
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.INGREDIENTS_SCREEN
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.MAIN_SCREEN
+import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.MEAL_PLAN_DETAILS_SCREEN
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.MEAL_PLAN_SCREEN
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.RECIPE_BY_INGREDIENTS_SCREEN
 import dev.aravindraj.composerecipeapp.navigation.RecipeAppScreens.RECIPE_DETAILS_SCREEN
@@ -18,10 +20,12 @@ object RecipeAppScreens {
     const val MEAL_PLAN_SCREEN = "mealPlan"
     const val RECIPE_DETAILS_SCREEN = "recipeDetails"
     const val RECIPE_BY_INGREDIENTS_SCREEN = "recipeByIngredients"
+    const val MEAL_PLAN_DETAILS_SCREEN = "mealPlanDetails"
 }
 
 object RecipeAppDestinationsArgs {
     const val RECIPE_ID_ARG = "recipeId"
+    const val MEAL_PLAN_ID_ARG = "mealPlanId"
 }
 
 object RecipeAppDestinations {
@@ -31,6 +35,7 @@ object RecipeAppDestinations {
     const val MEAL_PLAN_ROUTE = MEAL_PLAN_SCREEN
     const val RECIPE_DETAILS_ROUTE = "${RECIPE_DETAILS_SCREEN}/{${RECIPE_ID_ARG}}"
     const val RECIPE_BY_INGREDIENTS_ROUTE = RECIPE_BY_INGREDIENTS_SCREEN
+    const val MEAL_PLAN_DETAILS_ROUTE = "${MEAL_PLAN_DETAILS_SCREEN}/{${MEAL_PLAN_ID_ARG}}"
 }
 
 sealed class BottomNavItem(val route: String, val icon: Int, val label: String) {
@@ -42,11 +47,15 @@ sealed class BottomNavItem(val route: String, val icon: Int, val label: String) 
 }
 
 class RecipeAppNavigationActions(private val navController: NavHostController) {
-    fun navigateToRecipeDetail(recipeId: Int) {
+    fun navigateToRecipeDetails(recipeId: Int) {
         navController.navigate("${RECIPE_DETAILS_SCREEN}/$recipeId")
     }
 
     fun navigateToRecipeByIngredients() {
         navController.navigate(RECIPE_BY_INGREDIENTS_ROUTE)
+    }
+
+    fun navigateToMealPlanDetails(mealPlanId: Int) {
+        navController.navigate("${MEAL_PLAN_DETAILS_SCREEN}/$mealPlanId")
     }
 }

@@ -1,8 +1,9 @@
 package dev.aravindraj.composerecipeapp.data.source.remote
 
-import dev.aravindraj.composerecipeapp.data.model.MealTemplatesResponse
 import dev.aravindraj.composerecipeapp.data.model.RandomRecipesResponse
 import dev.aravindraj.composerecipeapp.data.model.RecipeByIngredients
+import dev.aravindraj.composerecipeapp.data.model.mealplan.MealPlanDetails
+import dev.aravindraj.composerecipeapp.data.model.mealplan.MealTemplatesResponse
 import javax.inject.Inject
 
 
@@ -20,5 +21,13 @@ class RemoteDataSource @Inject constructor(private val recipeAPIService: RecipeA
 
     suspend fun getMealTemplates(): MealTemplatesResponse {
         return recipeAPIService.getMealTemplates()
+    }
+
+    suspend fun getMealPlanDetails(
+        userName: String,
+        id: Int,
+        userNameHash: String
+    ): MealPlanDetails {
+        return recipeAPIService.getMealPlanDetails(userName, id, userNameHash)
     }
 }

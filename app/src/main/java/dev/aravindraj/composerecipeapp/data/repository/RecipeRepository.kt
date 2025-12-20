@@ -1,9 +1,10 @@
 package dev.aravindraj.composerecipeapp.data.repository
 
 import dev.aravindraj.composerecipeapp.data.model.IngredientCategory
-import dev.aravindraj.composerecipeapp.data.model.MealTemplate
 import dev.aravindraj.composerecipeapp.data.model.Recipe
 import dev.aravindraj.composerecipeapp.data.model.RecipeByIngredients
+import dev.aravindraj.composerecipeapp.data.model.mealplan.MealPlanDetails
+import dev.aravindraj.composerecipeapp.data.model.mealplan.MealTemplate
 import dev.aravindraj.composerecipeapp.data.source.local.LocalDataSource
 import dev.aravindraj.composerecipeapp.data.source.remote.RemoteDataSource
 import kotlinx.coroutines.Dispatchers
@@ -35,5 +36,11 @@ class RecipeRepository @Inject constructor(
 
     fun getMealTemplates(): Flow<List<MealTemplate>> {
         return flow { emit(remoteDataSource.getMealTemplates()) }.map { it.templates }
+    }
+
+    fun getMealPlanDetails(
+        userName: String, id: Int, userNameHash: String
+    ): Flow<MealPlanDetails> {
+        return flow { emit(remoteDataSource.getMealPlanDetails(userName, id, userNameHash)) }
     }
 }
