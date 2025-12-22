@@ -2,7 +2,7 @@ package dev.aravindraj.composerecipeapp.data.model.mealplan
 
 import com.google.gson.annotations.SerializedName
 
-data class MealPlanDays(
+data class MealPlanDay(
 
     @SerializedName("nutritionSummary")
     var nutritionSummary: NutritionSummary? = NutritionSummary(),

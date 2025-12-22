@@ -9,7 +9,7 @@ data class NutrientItems(
     @SerializedName("id")
     var id: Int? = null,
     @SerializedName("slot")
-    var slot: Int? = null,
+    var slot: Int,
     @SerializedName("position")
     var position: Int? = null,
     @SerializedName("type")

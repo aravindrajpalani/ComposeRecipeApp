@@ -68,7 +68,9 @@ fun RecipeAppNavGraph(
                     type = NavType.IntType
                 })
         ) {
-            MealPlanDetailsScreen(mealPlanDetailsViewModel = hiltViewModel(), onNavigateBack = {})
+            MealPlanDetailsScreen(
+                mealPlanDetailsViewModel = hiltViewModel(),
+                onNavigateBack = { navController.navigateUp() })
         }
     }
 

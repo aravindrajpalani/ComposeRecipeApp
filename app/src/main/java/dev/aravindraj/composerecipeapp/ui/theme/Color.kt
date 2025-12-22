@@ -3,10 +3,10 @@ package dev.aravindraj.composerecipeapp.ui.theme
 import androidx.compose.ui.graphics.Color
 
 
-val primaryLight = Color(0xFF585992)
+val primaryLight = Color(0xFF1873e8)
 val onPrimaryLight = Color(0xFFFFFFFF)
-val primaryContainerLight = Color(0xFFE1DFFF)
-val onPrimaryContainerLight = Color(0xFF404178)
+val primaryContainerLight = Color(0xFFacc7ff)
+val onPrimaryContainerLight = Color(0xFF002e68)
 val secondaryLight = Color(0xFF5D5C72)
 val onSecondaryLight = Color(0xFFFFFFFF)
 val secondaryContainerLight = Color(0xFFE2E0F9)
@@ -19,6 +19,16 @@ val errorLight = Color(0xFFBA1A1A)
 val onErrorLight = Color(0xFFFFFFFF)
 val errorContainerLight = Color(0xFFFFDAD6)
 val onErrorContainerLight = Color(0xFF93000A)
+
+val nutritionBGColor = Color(0xFFfae5ea)
+val breakfastBGColor = Color(0xFFfef9c3)
+val lunchBGColor = Color(0xFFfeeed5)
+val dinnerBGColor = Color(0xFFe0e7ff)
+
+val caloriesColor = Color(0xFF1873e8)
+val proteinColor = Color(0xFF05C568)
+val fatColor = Color(0xFFFFAB00)
+val carbsColor = Color(0xFFFF6E40)
 
 val White = Color(0xFFFFFFFF)
 val Black = Color(0xFF000000)

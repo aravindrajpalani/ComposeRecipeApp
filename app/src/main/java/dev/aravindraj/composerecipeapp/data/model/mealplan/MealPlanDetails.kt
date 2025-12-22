@@ -10,6 +10,6 @@ data class MealPlanDetails(
     @SerializedName("name")
     var name: String? = null,
     @SerializedName("days")
-    var days: ArrayList<MealPlanDays> = arrayListOf()
+    var days: ArrayList<MealPlanDay> = arrayListOf()
 
 )
