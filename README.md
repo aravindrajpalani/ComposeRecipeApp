@@ -35,9 +35,17 @@ Recipe application build in Android with Jetpack Compose, Kotlin, Coroutines, Fl
 ## Architecture
 
 This application follows the **MVVM (Model-View-ViewModel)** architecture pattern:
-- **Model** - Data classes and repository (remotedatasource) for data management
-- **View** - Activities and Fragments that observe ViewModel data
-- **ViewModel** - Manages UI-related data
+
+* **View (UI Layer)** - Jetpack Compose screens that observe ViewModel state and handle user interactions.
+* **ViewModel** - Manages UI state with `UiState` sealed class and exposes data as Flow.
+* **Repository** - Single source of truth that coordinates between LocalDataSource and RemoteDataSource.
+* **Data Sources**
+  * **LocalDataSource** - Reads `ingredients.json` from assets folder
+  * **RemoteDataSource** - Fetches recipe data via RecipeAPIService
+* **RecipeAPIService** - Retrofit interface for Spoonacular API endpoints.
+* **Dependency Injection** - Hilt provides constructor injection for Repository, DataSources, and API Service.
+
+<img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/recipe-app-architecture.png" width="700">
 
 ## Development Environment
 
