@@ -6,11 +6,21 @@ Recipe application build in Android with Jetpack Compose, Kotlin, Coroutines, Fl
 
 ## Features
 
-- Recipes screen displays list of popular recipes. Clicking on any recipe item opens recipe details screen.
-- Recipe details screen displays more information about recipe like cooking time, number of persons per servings, health score, ingredients information and steps involved in making the recipe.
-- Ingredients screen allow users to choose ingredients and find recipes which uses those ingredients. 
-- Meal plan screen displays list of popular meal plan templates. Clicking on any meal plan item opens meal plan details screen. 
-- Meal plan details screen displays meal details for each day. This screen has nutrition summary along with recipes for breakfast, lunch and dinner.
+- **Recipes screen** displays list of popular recipes. Clicking on any recipe item opens recipe details screen.
+- **Recipe details screen** displays more information about recipe like cooking time, number of persons per servings, health score, ingredients information and steps involved in making the recipe.
+- **Ingredients screen** allow users to choose ingredients and find recipes which uses those ingredients. 
+- **Meal plan screen** displays list of popular meal plan templates. Clicking on any meal plan item opens meal plan details screen. 
+- **Meal plan details screen** displays meal details for each day. This screen has nutrition summary along with recipes for breakfast, lunch and dinner.
+
+| <img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/home_screen.jpg" width="200"> | <img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/recipe_details_screen.jpg" width="200"> | <img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/ingredients_screen.jpg" width="200"> |
+| --- | --- | --- |
+| Home Screen | Recipe Details Screen | Ingredients Screen |
+
+<br/>
+
+| <img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/selected_ingredients_screen.jpg" width="200"> | <img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/meal_plan_screen.jpg" width="200"> | <img src="https://github.com/aravindrajpalani/ComposeRecipeApp/blob/main/screenshots/meal_plan_details_screen.jpg" width="200"> |  
+| --- | --- | --- |
+| Selected Ingredients Screen | Meal Plan Screen | Meal Plan Details Screen |  
 
 
 ## Technologies
@@ -36,6 +46,66 @@ This application follows the **MVVM (Model-View-ViewModel)** architecture patter
 - Target SDK: API 36 
 - Kotlin 2.2.21
 - Gradle 8.12.0
+
+## Project Structure
+
+```
+└── dev
+    └── aravindraj
+        └── composerecipeapp
+            ├── ComposeRecipeApplication.kt
+            ├── MainActivity.kt
+            ├── data
+            │   ├── model
+            │   ├── repository
+            │   │   └── RecipeRepository.kt
+            │   └── source
+            │       ├── local
+            │       │   └── LocalDataSource.kt
+            │       └── remote
+            │           ├── RecipeAPIService.kt
+            │           └── RemoteDataSource.kt
+            ├── di
+            │   ├── Qualifiers.kt
+            │   └── modules
+            │       └── ApplicationModule.kt
+            ├── navigation
+            │   ├── RecipeAppNavGraph.kt
+            │   └── RecipeAppNavigation.kt
+            ├── ui
+            │   ├── base
+            │   │   └── UiState.kt
+            │   ├── components
+            │   │   ├── ErrorScreen.kt
+            │   │   ├── ExpandableText.kt
+            │   │   └── LoadingScreen.kt
+            │   ├── home
+            │   │   ├── HomeScreen.kt
+            │   │   └── HomeViewModel.kt
+            │   ├── ingredients
+            │   │   ├── IngredientsScreen.kt
+            │   │   └── IngredientsViewModel.kt
+            │   ├── main
+            │   │   └── MainScreen.kt
+            │   ├── mealplan
+            │   │   ├── MealPlanScreen.kt
+            │   │   └── MealPlanViewModel.kt
+            │   ├── mealplandetails
+            │   │   ├── MealPlanDetailsScreen.kt
+            │   │   └── MealPlanDetailsViewModel.kt
+            │   ├── recipebyingredients
+            │   │   ├── RecipeByIngredientsScreen.kt
+            │   │   └── RecipeByIngredientsViewModel.kt
+            │   ├── recipedetail
+            │   │   └── RecipeDetailsScreen.kt
+            │   └── theme
+            │       ├── Color.kt
+            │       ├── Theme.kt
+            │       └── Type.kt
+            └── utils
+                ├── AppConstants.kt
+                └── Extensions.kt
+```
 
 ## Setup
 
